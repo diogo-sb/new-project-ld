@@ -6,13 +6,14 @@ db = mysql.connector.connect(
     user="root",
     passwd="",
     database="projeto"
+    #uth_plugin='mysql_native_password'
 )
 
 #select no banco
 cursor = db.cursor()
 cursor.execute("SELECT * FROM POSTS")
 result = cursor.fetchall()
-
-#vendo os resultados
+#print(result) #vendo o resultado sem quebra de linha
+#vendo os resultados com quebra de linha
 for x in result:
     print(x)
