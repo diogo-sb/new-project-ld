@@ -1,5 +1,6 @@
 import mysql.connector
 
+#conexao com o banco
 db = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -7,10 +8,11 @@ db = mysql.connector.connect(
     database="projeto"
     #uth_plugin='mysql_native_password'
 )
+
+#select no banco
 cursor = db.cursor()
 cursor.execute("SELECT * FROM POSTS")
-
-myresult = cursor.fetchall()
-
-for x in myresult:
-  print(x)
+result = cursor.fetchall()
+#vendo os resultados
+for x in result:
+    print(x)
