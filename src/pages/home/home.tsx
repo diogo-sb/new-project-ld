@@ -1,11 +1,11 @@
-import { Textarea } from "@/components/ui/textarea"
+import PostForm from '@/components/post-form/post-form'
 
 export default function Home() {
-    return(
-        <>
-        <main>
-            <Textarea placeholder="Digite aqui"></Textarea>
-        </main>
-        </>
-    )
+  return (
+    <>
+      <div>
+        <PostForm />
+      </div>
+    </>
+  )
 }
