@@ -1,9 +1,9 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import styles from './post-view.module.css'
 
-export default function PostView() {
-  const user = '@UsuárioX'
-  const postTxt = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, consectetur.'
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function PostView(props: any) {
 
   return (
     <section className='container-post'>
@@ -15,8 +15,8 @@ export default function PostView() {
           </Avatar>
         </div>
         <div>
-          <h4 className='font-bold'>{user}</h4>
-          <p>{postTxt}</p>
+          <h4 className='font-bold'>{props.user}</h4>
+          <p>{props.post}</p>
         </div>
       </div>
     </section>

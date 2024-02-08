@@ -3,14 +3,18 @@ import MySQLdb
 import json
 from flask import Flask, jsonify
 from flask_mysqldb import MySQL
+from flask_cors import CORS
+
+
 
 app = Flask(__name__)
 #db = MySQLdb.connect("localhost", "root", "project123", "projeto")
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'project123'
+app.config['MYSQL_PASSWORD'] = '159357'
 app.config['MYSQL_DB'] = 'projeto'
 mysql = MySQL(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/data', methods=['GET'])
 def get_data():
